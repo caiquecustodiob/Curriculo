@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Currículo — Caique Custodio Barroso Vasconcelos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f9fc;
+      --card: #ffffff;
+      --accent: #0b6b8a;
+      --muted: #6b7280;
+      --text: #0b1220;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+
+    .container {
+      max-width: 1150px;
+      margin: 28px auto;
+      padding: 16px;
+    }
+
+    header {
+      text-align: center;
+      border-bottom: 4px solid var(--accent);
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      color: var(--accent);
+      font-size: 2.3em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      margin: 4px 0;
+      font-size: 0.95em;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 20px;
+    }
+
+    @media(max-width:960px) {
+      .layout { grid-template-columns: 1fr; }
+    }
+
+    .sidebar {
+      padding: 16px;
+      border-radius: 12px;
+      background: var(--card);
+      box-shadow: 0 8px 20px rgba(11,17,23,0.04);
+      height: fit-content;
+    }
+
+    .sidebar h2 {
+      margin: 0 0 10px 0;
+      color: var(--accent);
+    }
+
+    .kv {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px dashed rgba(11,17,23,0.06);
+    }
+
+    .kv:last-child { border-bottom: none; }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .skill {
+      background: rgba(11,107,138,0.06);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+      color: var(--text);
+      font-size: 13px;
+    }
+
+    .main { padding: 6px 0; }
+
+    .section {
+      background: var(--card);
+      padding: 16px;
+      border-radius: 12px;
+      margin-bottom: 14px;
+      box-shadow: 0 6px 18px rgba(11,17,23,0.03);
+      animation: fadeIn 0.7s ease forwards;
+      opacity: 0;
+    }
+
+    .section:nth-of-type(1) { animation-delay: .2s; }
+    .section:nth-of-type(2) { animation-delay: .4s; }
+    .section:nth-of-type(3) { animation-delay: .6s; }
+    .section:nth-of-type(4) { animation-delay: .8s; }
+    .section:nth-of-type(5) { animation-delay: 1s; }
+    .section:nth-of-type(6) { animation-delay: 1.2s; }
+
+    @keyframes fadeIn {
+      to { opacity: 1; transform: none; }
+      from { opacity: 0; transform: translateY(8px); }
+    }
+
+    .section h3 { margin: 0 0 8px 0; color: var(--accent); }
+    .muted { color: var(--muted); font-size: 14px; }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .card {
+      border-radius: 10px;
+      padding: 14px;
+      background: linear-gradient(180deg,#fff,#fbfeff);
+      border: 1px solid rgba(11,107,138,0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      animation: fadeIn 0.8s ease forwards;
+      opacity: 0;
+    }
+
+    .card:nth-child(1){animation-delay:.2s}
+    .card:nth-child(2){animation-delay:.4s}
+    .card:nth-child(3){animation-delay:.6s}
+    .card:nth-child(4){animation-delay:.8s}
+    .card:nth-child(5){animation-delay:1s}
+
+    .card h4 { margin: 0; font-size: 15px; color: #08323a; }
+    .meta { font-size: 13px; color: var(--muted); }
+    .card p { margin: 0; color: var(--text); font-size: 14px; }
+
+    pre.code {
+      background: #071a20;
+      color: #cfeef0;
+      padding: 12px;
+      border-radius: 8px;
+      overflow: auto;
+      font-family: Menlo, monospace;
+      font-size: 13px;
+    }
+
+    footer {
+      margin-top: 8px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media print {
+      body { background: white; }
+      .sidebar { display: none !important; }
+      .section, .card { box-shadow: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Caique Custodio Barroso Vasconcelos</h1>
+      <p><strong>Telefone:</strong> +55 (85) 8854-0125 | <strong>E-mail:</strong> caiquecustodiob@gmail.com</p>
+      <p><strong>LinkedIn:</strong> linkedin.com/in/caique-custodio-b-vasconcelos |
+         <strong>GitHub:</strong> github.com/caiquecustodiob</p>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <h2>Resumo Rápido</h2>
+        <div class="kv"><strong>Cargo</strong><span>Assistente de PCM</span></div>
+        <div class="kv"><strong>Local</strong><span>Nordeste Locações — Fortaleza, CE</span></div>
+        <div class="kv"><strong>Disponibilidade</strong><span>Início imediato — Home Office</span></div>
+
+        <h2 style="margin-top:12px">Competências</h2>
+        <div class="skills">
+          <div class="skill">HTML</div>
+          <div class="skill">CSS</div>
+          <div class="skill">JavaScript</div>
+          <div class="skill">Node.js</div>
+          <div class="skill">WebSocket</div>
+          <div class="skill">SQL / SQLite</div>
+          <div class="skill">Python</div>
+          <div class="skill">Tkinter</div>
+          <div class="skill">Git</div>
+        </div>
+
+        <h2 style="margin-top:12px">Atuação na Nordeste</h2>
+        <ul style="padding-left:18px;color:var(--muted);margin:6px 0 0 0">
+          <li>Interceptação de demandas de reparo/substituição</li>
+          <li>Roteirização e gestão da frota de motos</li>
+          <li>Abertura de Ordens de Serviço</li>
+          <li>Envio de cobranças e requisição de peças</li>
+          <li>Preenchimento e análise de planilhas</li>
+        </ul>
+      </aside>
+
+      <section class="main">
+        <article class="section">
+          <h3>Sobre mim</h3>
+          <p class="muted">Sou Assistente de PCM com atuação prática em manutenção externa e gestão operacional na Nordeste Locações. Paralelamente, desenvolvo sistemas internos e automações que ajudam a reduzir trabalho manual e melhorar a confiabilidade das informações.</p>
+        </article>
+
+        <article class="section">
+          <h3>Experiência Profissional — Nordeste Locações</h3>
+          <ul>
+            <li>Interceptação e triagem de demandas de reparo e substituição.</li>
+            <li>Controle da frota de motos e roteirização de atendimentos.</li>
+            <li>Abertura e acompanhamento de Ordens de Serviço.</li>
+            <li>Envio de cobranças, requisição de peças e análise de planilhas.</li>
+            <li>Desenvolvimento de sistemas e automações internas.</li>
+          </ul>
+        </article>
+
+        <article class="section">
+          <h3>Projetos & Sistemas</h3>
+          <p class="muted">Aplicações internas desenvolvidas em HTML/CSS/JS, Node.js, WebSocket e SQL/SQLite, todas executando localmente (localhost).</p>
+
+          <div class="projects-grid">
+            <div class="card"><h4>Checklist — Linha Leve</h4><div class="meta">Node.js, WebSocket</div><p>Registro de inspeções rápidas e exportação para planilhas.</p></div>
+            <div class="card"><h4>Checklist — Linha Pesada</h4><div class="meta">Node.js, SQL</div><p>Checklist detalhado e histórico de manutenções.</p></div>
+            <div class="card"><h4>Gestão de Funcionários</h4><div class="meta">HTML, JS, Node.js</div><p>Controle de escalas, rotas e relatórios.</p></div>
+            <div class="card"><h4>PRD — Planejamento & Registro</h4><div class="meta">Node.js, WebSocket</div><p>Registro central de demandas e dashboard de supervisão.</p></div>
+            <div class="card"><h4>Bots Python (Tkinter)</h4><div class="meta">Python, pandas</div><p>Bots com interface gráfica para automação de planilhas e e-mails.</p></div>
+          </div>
+        </article>
+
+        <article class="section">
+          <h3>Exemplos Técnicos</h3>
+          <div class="muted">Trechos ilustrativos de código usado nos projetos.</div>
+          <pre class="code">// JavaScript — Ordenação simples
+const ordenarPorDistancia = (lista, base) => lista.sort((a,b)=>{
+  const da = Math.hypot(a.lat - base.lat, a.lng - base.lng);
+  const db = Math.hypot(b.lat - base.lat, b.lng - base.lng);
+  return da - db;
+});</pre>
+          <pre class="code"># Python — Acesso IMAP
+import imaplib, email
+mail = imaplib.IMAP4_SSL('imap.exemplo.com')
+mail.login('usuario','senha')
+mail.select('inbox')
+status, data = mail.search(None, 'UNSEEN')
+for num in data[0].split():
+    status, msg_data = mail.fetch(num, '(RFC822)')
+    msg = email.message_from_bytes(msg_data[0][1])
+    print(msg['subject'])</pre>
+        </article>
+
+        <article class="section">
+          <h3>Formação</h3>
+          <p class="muted"><strong>Análise e Desenvolvimento de Sistemas</strong> — UNIFATECIE (EAD) • 1º período</p>
+          <p class="muted"><strong>Matemática</strong> — Universidade Federal do Ceará (UFC) • 4 semestres cursados</p>
+        </article>
+
+        <article class="section">
+          <h3>Diferenciais & Perfil</h3>
+          <ul>
+            <li>Experiência prática com sistemas aplicados a operações reais.</li>
+            <li>Capacidade de desenvolver soluções completas (UI + backend).</li>
+            <li>Foco em automação e redução de retrabalho.</li>
+            <li>Facilidade de adaptação e trabalho remoto.</li>
+          </ul>
+        </article>
+      </section>
+    </div>
+  </div>
+
+  <footer>© 2025 — Caique Custodio Barroso Vasconcelos</footer>
+</body>
+</html>
