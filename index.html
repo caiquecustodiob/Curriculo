@@ -1,198 +1,151 @@
+
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Caique Custodio Barroso Vasconcelos - Currículo</title>
-  <style>
-    @page {
-      size: A4;
-      margin: 1.3cm;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C&C Soluções Tecnológicas | Portfólio de Inovação</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        accent: '#8B5CF6',
+                        dark: '#030712',
+                        surface: '#0B1224',
+                    },
+                    animation: {
+                        'float': 'float 8s ease-in-out infinite',
+                        'orb-rotate': 'rotate 20s linear infinite',
+                        'shimmer': 'shimmer 2.5s infinite linear',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translate(0, 0)' },
+                            '33%': { transform: 'translate(15px, -30px)' },
+                            '66%': { transform: 'translate(-10px, 15px)' },
+                        },
+                        rotate: {
+                            'from': { transform: 'rotate(0deg)' },
+                            'to': { transform: 'rotate(360deg)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { cursor: none !important; }
+        body { background-color: #030712; color: #F8FAFC; overflow-x: hidden; }
+        
+        #custom-cursor {
+            width: 20px; height: 20px;
+            background: rgba(59, 130, 246, 0.5);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease-out, background 0.3s ease;
+            backdrop-filter: blur(4px);
+        }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #222;
-      background-color: #fff;
-      margin: 0;
-      padding: 0;
-      font-size: 12px;
-      -webkit-print-color-adjust: exact;
-    }
+        .glass-card {
+            background: rgba(11, 18, 36, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
 
-    .container {
-      max-width: 780px;
-      margin: auto;
-      padding: 10px 15px;
-    }
+        .glass-card:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.1);
+            transform: translateY(-5px);
+        }
 
-    h1 {
-      font-size: 22px;
-      margin-bottom: 2px;
-      color: #111;
-    }
+        .text-gradient {
+            background: linear-gradient(to right, #60A5FA, #34D399, #A78BFA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shimmer 5s infinite linear;
+        }
 
-    h2 {
-      font-size: 13px;
-      color: #555;
-      font-weight: normal;
-      margin-top: 0;
-    }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1.5rem;
+        }
 
-    .header {
-      text-align: center;
-      margin-bottom: 12px;
-      border-bottom: 1px solid #e0e0e0;
-      padding-bottom: 6px;
-    }
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px) scale(0.95);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-    .contact {
-      text-align: center;
-      font-size: 11.5px;
-      color: #555;
-    }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
 
-    .section {
-      margin-bottom: 8px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 8px 10px;
-    }
-
-    .section h3 {
-      margin-top: 0;
-      font-size: 13px;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 2px;
-      color: #333;
-    }
-
-    ul {
-      margin: 4px 0 0 16px;
-      padding: 0;
-      font-size: 11.5px;
-    }
-
-    li {
-      margin-bottom: 3px;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6px;
-    }
-
-    .card {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 6px 8px;
-      background: #fafafa;
-    }
-
-    .card h4 {
-      margin: 0 0 2px;
-      font-size: 12px;
-      color: #222;
-    }
-
-    .card p {
-      margin: 0;
-      font-size: 11px;
-      color: #555;
-      line-height: 1.3;
-    }
-
-    @media print {
-      body {
-        zoom: 93%;
-      }
-    }
-  </style>
+        /* Floating Orbs Background */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            z-index: -1;
+            animation: float 15s ease-in-out infinite;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>Caique Custodio Barroso Vasconcelos</h1>
-      <h2>Assistente de PCM | Nordeste Locações</h2>
-      <div class="contact">
-        📧 caiquecustodiob@gmail.com | 📱 +55 (85) 8854-0125 | www.linkedin.com/in/caique-custodio-b-vasconcelos
-       
-      </div>
-    </div>
-
-    <div class="section">
-      <h3>Perfil Profissional</h3>
-      <p>Atualmente atuo como <strong>Assistente de Planejamento e Controle da Manutenção (PCM)</strong> na Nordeste Locações, apoiando a gestão de manutenção e buscando constantemente aprimorar os processos internos. Tenho interesse em unir o conhecimento prático do setor com o desenvolvimento de sistemas e automações que facilitem o trabalho da equipe.  
-      Estou cursando <strong>Análise e Desenvolvimento de Sistemas</strong>, o que tem ampliado minha capacidade de aplicar conceitos de programação e lógica na rotina de manutenção.</p>
-    </div>
-
-    <div class="section">
-      <h3>Experiência Profissional</h3>
-      <p><strong>Nordeste Locações</strong> – Assistente de PCM<br>
-      <em>Fortaleza, CE</em></p>
-      <ul>
-        <li>Auxílio no controle e planejamento das manutenções preventivas e corretivas.</li>
-        <li>Gerenciamento de rotas e acompanhamento de técnicos em campo.</li>
-        <li>Controle da frota e agendamento de serviços.</li>
-        <li>Abertura de Ordens de Serviço, indicadores e requisições de peças.</li>
-        <li>Desenvolvimento de sistemas e scripts de automação para otimizar tarefas.</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h3>Projetos e Sistemas Desenvolvidos</h3>
-      <div class="projects">
-        <div class="card">
-          <h4>PRD – Programa de Requisição Digital</h4>
-          <p>Sistema para controle e requisição de peças da manutenção, com relatórios e acompanhamento em tempo real (Node.js, Express, SQLite).</p>
-        </div>
-        <div class="card">
-          <h4>Checklist de Linha Leve</h4>
-          <p>Controle de inspeções e checklists de equipamentos leves com HTML, CSS e JS.</p>
-        </div>
-        <div class="card">
-          <h4>Checklist de Linha Pesada</h4>
-          <p>Versão adaptada para equipamentos maiores, com relatórios e alertas preventivos.</p>
-        </div>
-        <div class="card">
-          <h4>Gestão de Funcionários</h4>
-          <p>Acompanhamento de produtividade e pontuação da equipe de manutenção.</p>
-        </div>
-        <div class="card">
-          <h4>Site de Apresentação</h4>
-          <p>Página institucional para exibição de projetos e resultados internos.</p>
-        </div>
-        <div class="card">
-          <h4>Bots e Scripts (Python + Tkinter)</h4>
-          <p>Automação de tarefas como planilhas, leitura de e-mails e envio de relatórios.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h3>Formação Acadêmica</h3>
-      <p><strong>Unifatecie</strong><br>
-      Tecnólogo em Análise e Desenvolvimento de Sistemas – Cursando (1º semestre)</p>
-      <p><strong>Universidade Federal do Ceará (UFC)</strong><br>
-      Licenciatura em Matemática – Conclusão parcial (4 semestres)</p>
-    </div>
-
-    <div class="section">
-      <h3>Competências e Habilidades</h3>
-      <ul>
-        <li>Pacote Office (Word, Excel, PowerPoint) – nível intermediário</li>
-        <li>Google Workspace (Docs, Sheets, Drive, Forms)</li>
-        <li>Organização administrativa e controle de documentos</li>
-        <li>Elaboração de relatórios e planilhas de acompanhamento</li>
-        <li>Lógica de programação e desenvolvimento web (HTML, CSS, JS, Node.js)</li>
-        <li>Noções de banco de dados (SQLite e SQL básico)</li>
-        <li>Inglês técnico básico</li>
-        <li>Facilidade de aprendizado e adaptação</li>
-        <li>Comunicação e trabalho em equipe</li>
-        <li>Proatividade e foco em melhoria contínua</li>
-      </ul>
-    </div>
-  </div>
+    <div id="custom-cursor"></div>
+    <div id="root"></div>
+    <script>
+        const cursor = document.getElementById('custom-cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+        document.addEventListener('mousedown', () => cursor.style.transform = 'scale(0.8)');
+        document.addEventListener('mouseup', () => cursor.style.transform = 'scale(1)');
+        
+        const links = document.querySelectorAll('a, button, input, textarea');
+        links.forEach(l => {
+            l.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'scale(3)';
+                cursor.style.background = 'rgba(59, 130, 246, 0.2)';
+            });
+            l.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'scale(1)';
+                cursor.style.background = 'rgba(59, 130, 246, 0.5)';
+            });
+        });
+    </script>
+<script type="module" src="/index.tsx"></script>
 </body>
 </html>
